@@ -1,6 +1,6 @@
 package Kata4_Model;
 
-import kata4.*;
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;

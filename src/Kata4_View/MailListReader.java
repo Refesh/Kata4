@@ -17,16 +17,15 @@ public class MailListReader {
         
         try{
             BufferedReader reader = new BufferedReader(new FileReader(new File(fileName)));
-            String line = "";
-            while(((line = reader.readLine()))!= null){
+            IteratorReader it = new IteratorReader(reader);
+            
+            for(String line : it){
                 if(Mail.isMail(line))
                     list.add(new Mail(line));
             }
             
         } catch(FileNotFoundException exception){
             System.out.println("ERROR MailListREader::read (File not Found) " +exception.getMessage());
-        } catch(IOException exception){
-            System.out.println("ERROR");
         }
         return list;
     }
